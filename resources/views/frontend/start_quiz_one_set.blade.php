@@ -139,7 +139,6 @@
                         @foreach ($item->options as $option)
                             <div class="question pt-2">
                                 <div class="ml-md-2 ml-sm-2 pl-md-2 pt-sm-0 pt-3" id="options">
-                                    {{-- <label > <strong class="text-info">{{ $option->key??' ' }}</strong> </label> --}}
                                     <label class="options">{{ $option->option }}
                                         <input
                                         @if ($questionType == "MR")
@@ -162,6 +161,9 @@
                                                     @if($type =='two')
                                                     disabled
                                                     @endif
+                                                    @if (request()->lockded)
+                                                    disabled
+                                                    @endif
 
                                         >
                                         <span class="checkmark"></span>
@@ -179,7 +181,10 @@
                                     value={{ $answer_rone->difficulty_rating }}
                                 @endif
                             @endif
-                            @if($type=='two')
+                            {{-- @if($type=='two')
+                            disabled
+                            @endif --}}
+                            @if (request()->lockded)
                             disabled
                             @endif
                                 onkeypress="return event.charCode >= 48 && event.charCode <= 57">
@@ -197,6 +202,7 @@
                         @endif
 
                         <div class="d-flex align-items-center pt-3">
+                            @if(!request()->lockded )
                             <div id="prev">
                                 <a href="{{ $previousPageUrl }}">
                                     <button type="button" class="btn btn-md btn-secondary"
@@ -208,16 +214,24 @@
                                     </button>
                                 </a>
                             </div>
-                            <div class="ml-auto">
-                                <a href="{{ $nextPageUrl }}">
-                                {{-- <a href="#"> --}}
-                                    <button type="button" class="btn btn-md btn-success"
 
-                                    disabled> Next <i
-                                            class="fas fa-forward"></i>
-                                    </button>
-                                </a>
-                            </div>
+                                <div class="ml-auto">
+                                    <a href="{{ $nextPageUrl }}">
+                                        <button type="button" class="btn btn-md btn-success"
+                                        disabled> Next <i class="fas fa-forward"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            @else
+                                <div class="ml-auto">
+                                    <a href="{{ url('user/start-quiz-two-set/list') }}">
+                                        <button type="button" class="btn btn-md btn-success"
+                                        disabled> Back <i class="fas fa-backward"></i>
+                                        </button>
+                                    </a>
+                                </div>
+
+                            @endif
                         </div>
                     @endforeach
 

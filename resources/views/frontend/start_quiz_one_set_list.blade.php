@@ -117,7 +117,7 @@
                         @endphp
                         <div class="col-sm-4 col-md-4">
                             <span>
-                                <a href="{{route('start_quiz_one_set') }}?page={{ $key+1 }}&type={{$type}}"
+                                <a href="{{route('start_quiz_one_set') }}?page={{ $key+1 }}&type={{'one'}}&lockded={{ true }}"
                                     class="text-success">
                                     <input type="checkbox" >
                                     Go For Review  <i class="fas fa-forward text-info"></i>

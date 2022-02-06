@@ -165,8 +165,11 @@
 
                                                     @endif
                                                 {{-- @endif --}}
-                                                @if($type =='two')
+                                                {{-- @if($type =='two')
                                                 disabled
+                                                @endif --}}
+                                                @if (request()->lockded)
+                                                    disabled
                                                 @endif
 
                                         >
@@ -203,6 +206,8 @@
                         @endif
 
                         <div class="d-flex align-items-center pt-3">
+                            @if(!request()->lockded )
+
                             <div id="prev">
                                 <a href="{{ $previousPageUrl }}">
                                     <button type="button" class="btn btn-md btn-secondary"
@@ -221,6 +226,16 @@
                                     </button>
                                 </a>
                             </div>
+                            @else
+                            <div class="ml-auto">
+                                <a href="{{ url('user/start_quiz_one_set/list') }}">
+                                    <button type="button" class="btn btn-md btn-success"
+                                    disabled> Back <i class="fas fa-backward"></i>
+                                    </button>
+                                </a>
+                            </div>
+
+                            @endif
                         </div>
                     @endforeach
 
