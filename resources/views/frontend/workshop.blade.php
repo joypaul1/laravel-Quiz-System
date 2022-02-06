@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center">
+
                     @foreach($Workshop as $data)
                         <h2>{{$data->title}}</h2>
                         <h5>{{$data->sub_title}}</h5>

@@ -40,7 +40,7 @@ Route::post('custom-registration', [RegisterController::class, 'register'])->nam
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 
-// User routes
+// User routes / frontend url
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('/deshboard', [homeController::class, 'userDashboard'])->name('user-deshboard');
     Route::get('workshop',[homeController::class,'workShop'])->name('workshop');
@@ -68,7 +68,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 
 
 
-//Admin routes
+//Admin routes / balckend url
 Route::group(['prefix' => 'admin','as' => 'admin.' ,'middleware' => ['is_admin']], function () {
     Route::get('/', [dashboardController::class, 'dashboard'])->name('dashboard');
     // start profile routes

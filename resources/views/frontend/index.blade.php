@@ -53,7 +53,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-sm-12 text-center">
                     <h3>
-                        The Best Of Advanture In You
+                        The Best Of Advanture In You....
                     </h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nemo blanditiis optio
                         officiis. Nam,
@@ -63,7 +63,6 @@
         </div>
         <!-- End Title head -->
         <div class="row">
-
             <div class="col-12 text-justify">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore impedit numquam consequuntur recusandae eos corporis, aut quos, natus tenetur corrupti qui magnam voluptatem excepturi velit omnis asperiores odit nostrum harum sequi laboriosam itaque dolor! Non perspiciatis officia cumque quo dignissimos quaerat nesciunt mollitia eius fuga modi! Reiciendis inventore omnis quaerat nisi, aperiam nam expedita non eius? Eligendi repellat magni earum, a ullam ab velit asperiores tenetur exercitationem aperiam totam explicabo soluta, rerum at. Ea omnis, deleniti pariatur nisi deserunt ut excepturi enim accusantium, at, commodi corrupti natus quasi veritatis est similique mollitia totam autem? Earum quia dolor quisquam asperiores. Modi dolore aperiam id eligendi, recusandae vero, inventore minima qui incidunt dolor magni? Nostrum nam consectetur laborum similique tempore illo accusamus debitis quam aut alias in beatae minus optio ex perspiciatis esse, sunt reprehenderit nemo sequi. Atque, mollitia optio reiciendis inventore nobis aspernatur animi cum dolores ea repudiandae reprehenderit sit, officiis quasi consectetur sapiente modi incidunt doloribus assumenda sed perferendis tenetur. Debitis at natus voluptates odio optio repellendus, incidunt porro atque dolor ducimus! Repellendus, repudiandae? Dolorum qui est nam deleniti, omnis exercitationem, eos autem incidunt perspiciatis aut quaerat, saepe nesciunt perferendis corrupti. Deleniti, ut, saepe doloribus incidunt minus consequatur aut non voluptatibus libero id sed ab dolorem eum ipsam iure adipisci illo laboriosam, aliquid architecto. Modi, nemo aliquam. Esse excepturi recusandae facilis labore a at explicabo ea omnis impedit placeat, quisquam deleniti maxime quis itaque deserunt eveniet id nostrum saepe facere? Officia repellat nobis laudantium nemo, id ad magni provident eos iste corporis.
             </div>
