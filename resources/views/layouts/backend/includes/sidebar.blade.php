@@ -75,7 +75,7 @@
                 <a href="{{route('admin.user.survey')}}">
                     <div class="parent-icon"><i class='bx bx-detail'></i>
                     </div>
-                    <div class="menu-title">User Servery</div>
+                    <div class="menu-title">User Survery</div>
                 </a>
             </li>
 
@@ -90,6 +90,18 @@
                     </li>
                     <li> <a href="{{ route('admin.add-survey') }}"><i class="bx bx-right-arrow-alt"></i>Add Question</a>
                     </li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><i class='bx bx-message'></i>
+                    </div>
+                    <div class="menu-title">User Management </div>
+                </a>
+                <ul>
+                    <li> <a href="{{ route('admin.user-management') }}"><i class="bx bx-right-arrow-alt"></i>User List</a>
+                    </li>
+
                 </ul>
             </li>
 

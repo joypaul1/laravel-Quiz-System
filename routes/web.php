@@ -7,7 +7,7 @@ use App\Http\Controllers\frontend\homeController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\backend\CategoryController;
-use App\Http\Controllers\backend\dashboardController;
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\profileController;
 use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\backend\WorkshopController;
@@ -20,6 +20,7 @@ use App\Models\backend\Question;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //frontend controller
 Route::get('/', [homeController::class, 'index'])->name('home');
@@ -70,7 +71,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 
 //Admin routes / balckend url
 Route::group(['prefix' => 'admin','as' => 'admin.' ,'middleware' => ['is_admin']], function () {
-    Route::get('/', [dashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     // start profile routes
     Route::get('profile', [profileController::class, 'index'])->name('profile');
     Route::post('profile-update', [profileController::class, 'profileUpdate'])->name('profile-update');
@@ -121,6 +122,11 @@ Route::group(['prefix' => 'admin','as' => 'admin.' ,'middleware' => ['is_admin']
     Route::get('survey-edit/{survey}', [SurveyController::class, 'edit'])->name('edit-survey');
     Route::post('survey-update/{survey}', [SurveyController::class, 'update'])->name('update-survey');
     Route::Post('survey-delete/{survey}', [SurveyController::class, 'delete'])->name('delete-survey');
+
+    //user management//
+    Route::get('user-management', [DashboardController::class, 'userIndex'])->name('user-management');
+    Route::get('user-changeStatus/{id}', [DashboardController::class, 'changeStatus'])->name('user-changeStatus');
+    Route::get('user-delete/{id}', [DashboardController::class, 'delete'])->name('delete-user');
 
 
 

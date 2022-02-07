@@ -29,18 +29,20 @@ class AuthController extends Controller
 
 
         $credentials = $request->only('email', 'password');
+        if(User::where('email',  $request->email)->first()->status == true){
+            if (Auth::attempt($credentials)) {
 
-        if (Auth::attempt($credentials)) {
+                if(auth()->user()->is_admin == 1){
+                    return redirect()->route('admin.dashboard')->with('success','Admin Login Successfully!');
+                }else{
+                    return redirect()->route('home')->with('success','User Login Successfully!');
+                }
 
-            if(auth()->user()->is_admin==1){
-                return redirect()->route('admin.dashboard')->with('success','Admin Login Successfully!');
-            }else{
-                return redirect()->route('home')->with('success','User Login Successfully!');
             }
-            // return redirect()->intended('dashboard')
-            //             ->withSuccess('Signed in');
+            return redirect("login")->with('error','Opps..! You have entered invalid email & password. Please Try Again!');
         }
-        return redirect("login")->with('error','Opps..! You have entered invalid email & password. Please Try Again!');
+        return redirect("login")->with('error','Opps..! You are Blocked d! Contact to Admin.');
+
     }
 
     public function register()
