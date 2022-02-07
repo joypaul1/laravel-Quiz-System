@@ -261,6 +261,7 @@ class homeController extends Controller
             User::whereId(auth()->id())->update(['set_rtwo_submit' => true]);
             return redirect()->to('user/deshboard');
         }
+
         User::whereId(auth()->id())->update(['set_rone_submit' => true]);
         return redirect()->to('user/introduction');
     }
