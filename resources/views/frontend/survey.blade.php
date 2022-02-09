@@ -84,18 +84,18 @@
                         <div class="row">
                         <div class="col-md-12">
                             @php
-                                $dummuValue = [1,2,3,4,5];
+                                $dummuValue = ["1","2","3",'4',"5"];
                                 $answer     =  App\Models\UserSurveyAnswer::where('survey_id',  $data->id)->where('user_id', auth()->id())->first();
                             @endphp
                             <span style="display: inherit">{{ $key+1 }}.{{ $data->survey }} : </span>
                             @if ($data->type == 'rating')
 
                                 <div class="rating">
-                                    <input type="radio" @if ($answer) {{ $dummuValue[0] == $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey"id="star-{{ $data->id."-". $dummuValue[0]}}" name="{{ $key}}-rating" value="5" /><label for="star-{{ $data->id."-". $dummuValue[0]}}">5 stars</label>
-                                    <input type="radio" @if ($answer) {{ $dummuValue[1] == $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[1]}}" name="{{ $key}}-rating" value="4" /><label for="star-{{ $data->id."-". $dummuValue[1]}}" >4 stars</label>
-                                    <input type="radio" @if ($answer) {{ $dummuValue[2] == $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[2]}}" name="{{ $key}}-rating" value="3" /><label for="star-{{ $data->id."-". $dummuValue[2]}}" >3 stars</label>
-                                    <input type="radio" @if ($answer) {{ $dummuValue[3] == $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[3]}}" name="{{ $key}}-rating" value="2" /><label for="star-{{ $data->id."-". $dummuValue[3]}}" >2 stars</label>
-                                    <input type="radio" @if ($answer) {{ $dummuValue[4] == $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey"id="star-{{ $data->id."-". $dummuValue[4]}}" name="{{ $key}}-rating" value="1" /><label for="star-{{ $data->id."-". $dummuValue[4]}}" >1 star</label>
+                                    <input type="radio" @if ($answer) {{ $dummuValue[4] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey"id="star-{{ $data->id."-". $dummuValue[0]}}" name="{{ $key}}-rating" value="5" /><label for="star-{{ $data->id."-". $dummuValue[0]}}">5 stars</label>
+                                    <input type="radio" @if ($answer) {{ $dummuValue[3] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[1]}}" name="{{ $key}}-rating" value="4" /><label for="star-{{ $data->id."-". $dummuValue[1]}}" >4 stars</label>
+                                    <input type="radio" @if ($answer) {{ $dummuValue[2] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[2]}}" name="{{ $key}}-rating" value="3" /><label for="star-{{ $data->id."-". $dummuValue[2]}}" >3 stars</label>
+                                    <input type="radio" @if ($answer) {{ $dummuValue[1] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[3]}}" name="{{ $key}}-rating" value="2" /><label for="star-{{ $data->id."-". $dummuValue[3]}}" >2 stars</label>
+                                    <input type="radio" @if ($answer) {{ $dummuValue[0] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey"id="star-{{ $data->id."-". $dummuValue[4]}}" name="{{ $key}}-rating" value="1" /><label for="star-{{ $data->id."-". $dummuValue[4]}}" >1 star</label>
                                 </div>
                             @else
                                 <br>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Question Set One @endsection
+@section('title') Question Set Two @endsection
 @push('css')
 <style>
     .question {
@@ -95,7 +95,7 @@
                     <i class="fa fa-home"></i> Home</a>
             </li>
             <li class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__url">Question Set One List</a>
+                <a href="#" class="breadcrumbs__url">Question Set Two List</a>
             </li>
         </ul>
 
@@ -113,7 +113,7 @@
                             </p>
                         </div>
                         @php
-                            $type = auth()->user()->set_rone_submit == false?'one':'two';
+                            $type = auth()->user()->set_two_rone_submit == false?'one':'two';
                         @endphp
                         <div class="col-sm-4 col-md-4">
                             <span>
@@ -125,9 +125,19 @@
                             </span>
                         </div>
                     </section>
-
-
                     @endforeach
+                    @if (auth()->user()->set_two_rone_submit && auth()->user()->set_two_rtwo_submit)
+                        <div class="d-flex align-items-center pt-3">
+
+                            <div class="ml-auto">
+                                <a href="{{ url('user/deshboard') }}">
+                                    <button type="submit" class="btn btn-md btn-success" > Dashboard <i
+                                            class="fas fa-forward"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    @else
                     <div class="d-flex align-items-center pt-3">
 
                         <div class="ml-auto">
@@ -138,6 +148,9 @@
                             </a>
                         </div>
                     </div>
+
+                    @endif
+
 
                 </div>
 

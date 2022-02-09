@@ -35,21 +35,12 @@
                                 @else
                                 <p>%  of correct answers (based on historical data): 0 </p>
                                 @endif
-
                                 <p>Average of difculty rating across all questions: {{ round($set_one_r_one_d_r)}} </p>
+                                @if (auth()->user()->set_rone_submit && auth()->user()->set_rtwo_submit)
+                                    <p>You Can see the asnwer of Question Set One <a href="{{ url('user/start_quiz_one_set/list?&justView=true') }}" class="btn btn-sm btn-success">Cliek Here</a> </p>
+                                @endif
                             </div>
                         </div>
-                        {{-- <br> --}}
-                        {{-- <div class="card text-left">
-                            <div class="card-header bg-info">Question Set One: Round Two</div>
-                            <div class="card-body">
-                                <p> {{ Auth::user()->name  }} Results</p>
-                                <p>Number of questions: 20</p>
-                                <p>Number of correct answers : {{ auth()->user()->score_so_two??0 }}</p>
-                                <p>% of correct answers (based on historical data): {{ round((auth()->user()->score_so_two /20)*100)??0 }}</p>
-                                <p>Average of difculty rating across all questions: {{ round($set_one_r_two_d_r)}} </p>
-                            </div>
-                        </div> --}}
                         <br>
                         <div class="card text-left">
                             <div class="card-header bg-info">Question Set Two: Round One</div>
@@ -62,8 +53,10 @@
                                 @else
                                 <p>%  of correct answers (based on historical data): 0 </p>
                                 @endif
-
                                 <p>Average of difculty rating across all questions: {{ round($set_two_r_one_d_r)}} </p>
+                                @if (auth()->user()->set_two_rone_submit && auth()->user()->set_two_rtwo_submit)
+                                    <p>You Can see the asnwer of Question Set Two <a href="{{ url('user/start-quiz-two-set/list?&justView=true') }}" class="btn btn-sm btn-success">Cliek Here</a> </p>
+                                @endif
                             </div>
                         </div>
 

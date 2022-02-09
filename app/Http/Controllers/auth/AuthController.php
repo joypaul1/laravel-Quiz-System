@@ -31,13 +31,16 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if(User::where('email',  $request->email)->first()->status == true){
             if (Auth::attempt($credentials)) {
-
                 if(auth()->user()->is_admin == 1){
                     return redirect()->route('admin.dashboard')->with('success','Admin Login Successfully!');
-                }else{
+                }
+                elseif(auth()->user()->set_two_rone_submit && auth()->user()->set_two_rtwo_submit && auth()->user()->set_rone_submit
+                && auth()->user()->set_rtwo_submit){
+                    return redirect()->to('user/deshboard');
+                }
+                else{
                     return redirect()->route('home')->with('success','User Login Successfully!');
                 }
-
             }
             return redirect("login")->with('error','Opps..! You have entered invalid email & password. Please Try Again!');
         }

@@ -24,7 +24,7 @@
                     <div class="text-left">
                         <h5>{{ auth()->user()->name??' ' }},You should Complite Question Set One Round One & Round Two.</h5>
                         <strong> Go to the Dashboard
-                            <a href="{{ url('user/set-One') }}" target="_blank"
+                            <a href="{{ url('user/set-One') }}"
                             rel="noopener noreferrer">Clik Here </a>
                         </strong>
                     </div>
@@ -32,8 +32,16 @@
                     <div class="text-left">
                         <h5>{{ auth()->user()->name??' ' }},You are done Question Set Two Round One & Round Two.</h5>
                         <strong> Go to the Dashboard
-                            <a href="{{ route('user-deshboard') }}" target="_blank"
+                            <a href="{{ route('user-deshboard') }}"
                             rel="noopener noreferrer">Clik Here </a>
+                        </strong>
+                    </div>
+                    <br>
+                    <div class="text-left">
+                        <h5>{{ auth()->user()->name??' ' }},You  can see Question Set Two  Answer.</h5>
+                        <strong> Go to the Question Set Two
+                            <a href="{{ url('user/start-quiz-two-set/list?&justView=true') }}"
+                           >Clik Here </a>
                         </strong>
                     </div>
                 @else

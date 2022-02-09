@@ -128,6 +128,19 @@
 
 
                     @endforeach
+                    @if (auth()->user()->set_rone_submit && auth()->user()->set_rtwo_submit)
+                    <div class="d-flex align-items-center pt-3">
+
+                        <div class="ml-auto">
+                            <a href="{{ url('user/deshboard') }}">
+                                <button type="submit" class="btn btn-md btn-success" > Dashboard <i
+                                        class="fas fa-forward"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    @else
                     <div class="d-flex align-items-center pt-3">
 
                         <div class="ml-auto">
@@ -138,6 +151,8 @@
                             </a>
                         </div>
                     </div>
+                    @endif
+
 
                 </div>
 

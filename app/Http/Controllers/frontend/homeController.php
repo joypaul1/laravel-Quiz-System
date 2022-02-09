@@ -100,7 +100,7 @@ class homeController extends Controller
     public function surveyAnswer(Request $request)
     {
 
-        UserSurveyAnswer::updateOrCreate(
+        return  UserSurveyAnswer::updateOrCreate(
             ['user_id' => $request->userId, 'survey_id' => $request->question_id],
             [
                 'ratting' => $request->ratting,
@@ -207,7 +207,6 @@ class homeController extends Controller
         ])->where('user_id', auth()->id())->first();
 
         $response =   self::answerSheet($data[0]->id)->get()->unique('user_id')->count() ?? 0;
-
 
         $correct_ans = round(($data[0]->correct_ans / ($response == 0 ? 1 : $response)) * 100) ?? 0;
         $average =   self::answerSheet($data[0]->id)->avg('difficulty_rating') ?? 0;

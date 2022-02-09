@@ -22,12 +22,19 @@
                     <div class="text-left">
                         <h5>{{ auth()->user()->name??' ' }},You are done Question Set One Round One & Round Two.</h5>
                         <strong> Go to the Question Set Two
-                            <a href="{{ route('setTwo') }}" target="_blank"
-                            rel="noopener noreferrer">Clik Here </a>
+                            <a href="{{ route('setTwo') }}"
+                           >Clik Here </a>
+                        </strong>
+                    </div>
+                    <br>
+                    <div class="text-left">
+                        <h5>{{ auth()->user()->name??' ' }},You  can see Question Set One Answer.</h5>
+                        <strong> Go to the Question Set Two
+                            <a href="{{ url('user/start_quiz_one_set/list?&justView=true') }}"
+                           >Clik Here </a>
                         </strong>
                     </div>
                 @else
-
                     <div class="text-left">
 
                         <h5>{{ auth()->user()->name??' ' }}, Welcome to Question Set One {{ auth()->user()->set_rone_submit == false ?'Round One.' : 'Round Two.' }}</h5>
@@ -44,7 +51,6 @@
                         <p class="text-justify">
                             Ready? Let's begin!
                         </p>
-
                     </div>
                     <div class="text-right">
                         @php
