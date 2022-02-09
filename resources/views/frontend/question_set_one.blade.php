@@ -29,7 +29,7 @@
                     <br>
                     <div class="text-left">
                         <h5>{{ auth()->user()->name??' ' }},You  can see Question Set One Answer.</h5>
-                        <strong> Go to the Question Set Two
+                        <strong> Go to the Question Set One
                             <a href="{{ url('user/start_quiz_one_set/list?&justView=true') }}"
                            >Clik Here </a>
                         </strong>
