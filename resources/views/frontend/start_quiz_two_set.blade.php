@@ -228,7 +228,7 @@
                             </div>
                             @else
                             <div class="ml-auto">
-                                <a href="{{ url('user/start_quiz_one_set/list') }}">
+                                <a href="{{ url('user/start-quiz-two-set/list') }}">
                                     <button type="button" class="btn btn-md btn-success"
                                     disabled> Back <i class="fas fa-backward"></i>
                                     </button>
