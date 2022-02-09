@@ -89,7 +89,6 @@
                             @endphp
                             <span style="display: inherit">{{ $key+1 }}.{{ $data->survey }} : </span>
                             @if ($data->type == 'rating')
-
                                 <div class="rating">
                                     <input type="radio" @if ($answer) {{ $dummuValue[4] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey"id="star-{{ $data->id."-". $dummuValue[0]}}" name="{{ $key}}-rating" value="5" /><label for="star-{{ $data->id."-". $dummuValue[0]}}">5 stars</label>
                                     <input type="radio" @if ($answer) {{ $dummuValue[3] === $answer->ratting ?'Checked': ' ' }} @endif data-id={{$data->id}} class="survey" id="star-{{ $data->id."-". $dummuValue[1]}}" name="{{ $key}}-rating" value="4" /><label for="star-{{ $data->id."-". $dummuValue[1]}}" >4 stars</label>

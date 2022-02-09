@@ -134,33 +134,12 @@ Route::group(['prefix' => 'admin','as' => 'admin.' ,'middleware' => ['is_admin']
 
 
 Route::get('/data-clear', function(){
+
+    Question::where('status' , true)->update(['correct_ans' => 0]);
     Artisan::call('optimize:clear');
     Artisan::call('key:generate');
     dd('done');
-    // $data = Question::take(100)->skip(18)->get(['id', 'answer_key']);
-    // foreach($data as $item){
-    //     $key= json_decode($item->answer_key);
-    //     $key = str_replace(',', '","', $key);
-    //     $key = '["'.$key.'"]';
-    //     $item->update(['answer_key' => $key ]);
-    //     // dd($item);
-    // }
-    // $key = explode(",",$data[2]->answer_key);
-    // dd(json_encode($key));
-    // $data = $data[2]->update(['answer_key' => json_encode($key)]);
-    // dd($data);
 
-    // dd(json_decode($data->answer_key));
-
-    // foreach($data as $key=>$item){
-    //     // dd($item);
-    //     $key = '5'+ $key;
-
-    //     DB::Statement("UPDATE `questions` SET `id` = '$key' WHERE `questions`.`id` =".$item->id.";");
-    //     // $item->update(['set_no' =>2]);
-    // }
-    // dd($data);
-    // return Excel::download(new QuestionExport, 'questions.xlsx');
 });
 
 // Route::get('export', 'MyController@export')->name('export');

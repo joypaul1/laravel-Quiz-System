@@ -52,7 +52,7 @@
                     @endphp
                     <div class="text-left">
                         <h5>{{ auth()->user()->name??' ' }},You are done Question Set Two Round One</h5>
-                        <strong> Go to the Question Set One Round Two
+                        <strong> Go to the Question Set Two Round Two
                             <a href="{{ route('start_quiz_two_set') }}?type={{ $round }}"
                             rel="noopener noreferrer">Clik Here </a>
                         </strong>
