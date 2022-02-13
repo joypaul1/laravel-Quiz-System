@@ -21,9 +21,9 @@
                             <h1 class="text-white animated fadeInUp nopadd" style="animation-delay:1s">{{$data->title}}</h1>
                             <p class="text-white animated fadeInDown text-center" style="animation-delay:2s">
                                 {{$data->sub_title}}</p>
-                            <div class="animated fadeInLeft d-none d-sm-block" style="animation-delay:2.6s">
+                            {{-- <div class="animated fadeInLeft d-none d-sm-block" style="animation-delay:2.6s">
                                 <a href="{{$data->link}}" class="btn btn-primary text-uppercase"> {{$data->button_text}}</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     @endforeach

@@ -64,7 +64,7 @@ class AuthController extends Controller
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required|min:6'
         ]);
-        dd($request->all());
+
         $data = $request->all();
         $check = $this->create($data);
 

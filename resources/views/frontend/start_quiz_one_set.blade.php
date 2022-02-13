@@ -181,21 +181,21 @@
                                     value={{ $answer_rone->difficulty_rating }}
                                 @endif
                             @endif
-                            {{-- @if($type=='two')
-                            disabled
-                            @endif --}}
                             @if (request()->lockded)
                             disabled
                             @endif
-                                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
-                        @if($type=='two')
+                        @if($type=='two' || auth()->user()->set_rtwo_submit == true)
                             <p> Round Two Question Difculty Rating (0-100):
                                 <input type="text" id="dis_rating"
                                 @if ($answer_rtwo)
                                     @if( $answer_rtwo->difficulty_rating )
                                         value={{ $answer_rtwo->difficulty_rating }}
                                     @endif
+                                @endif
+                                @if (auth()->user()->set_rtwo_submit == true)
+                                disabled
                                 @endif
                                 onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                             </p>
@@ -238,7 +238,7 @@
 
                 </div>
             </div>
-            @if($type=='two')
+            @if($type=='two' || auth()->user()->set_rtwo_submit == true)
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
